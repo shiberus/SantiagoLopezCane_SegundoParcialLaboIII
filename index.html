@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.checkboxContainer {
+  background-color: #dddddd;
+  border-radius: 3px;
+  margin:3px;
+  padding: 2px;
+}
+
+#CheckBoxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+}
+
+.inputABM {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#FormABM {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: none;
+}
+
+#selectTipoContainer {
+    display: none;
+}
+
+#spinnerContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(25, 25, 25, 0.75);
+}
+
+</style>
+</head>
+<body>
+  <div id="spinnerContainer">
+    <img src="spinner.gif"></img>
+  </div>
+  <div id="FormDatos">
+    <h1>Formulario de Datos</h1>
+    <label>
+        Filtrar por:
+        <select id="selectFiltro">
+            <option value="Todos">Todos</option>
+            <option value="Aereos">Aereos</option>
+            <option value="Terrestres">Terrestres</option>
+        </select>
+    </label>
+    <div id="CheckBoxes"></div>
+    <table id="TablaDatos"></table>
+    <button id="buttonAgregar">Agregar</button>
+  </div>
+  <div id="FormABM">
+    <form>
+        <label>Modelo</label>
+        <input id="modeloInput" type="text" class="inputABM" placeholder="Apruebeme profe">
+    
+        <label>Ano de Fabricacion</label>
+        <input id="anoFabInput" type="text" class="inputABM" placeholder="1998">
+
+        <label>Velocidad Maxima</label>
+        <input id="velMaxInput" type="number" class="inputABM" placeholder="300">
+
+        <input type="hidden" id="idVehiculo">
+
+        <div id="selectTipoContainer">
+            <label>Tipo</label>
+            <select id="selectTipo" class="inputABM">
+                <option value="Aereo">Aereo</option>
+                <option value="Terrestre">Terrestre</option>
+            </select>
+        </div>
+        <div id="camposExtra"></div>
+        <div id="botonesABM"></div>
+        
+    </form>
+  </div>
+
+</body>
+
+<script src="./validar.js" type="text/javascript"></script>
+<script src="./Entidades.js" type="text/javascript"></script>
+<script src="./ManipularDom.js" type="text/javascript"></script>
+</html>
